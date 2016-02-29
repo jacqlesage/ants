@@ -17,9 +17,26 @@ public class Grid {
     private char state;
     
     public Grid(Point p, char s) {
-        
-        System.out.println();
+        this.p = p;
+        this.state = s;
+        System.out.println("#");
                 
+    }
+
+    public Point getP() {
+        return p;
+    }
+
+    public void setP(Point p) {
+        this.p = p;
+    }
+
+    public char getState() {
+        return state;
+    }
+
+    public void setState(char state) {
+        this.state = state;
     }
     
     
