@@ -13,30 +13,30 @@ import java.awt.Point;
  */
 public class Grid {
 
-    private Point p;
-    private char state;
+    public static Point p;
+    public static char state;
     
     public Grid(Point p, char s) {
         this.p = p;
         this.state = s;
-        System.out.println("#");
+        
                 
     }
 
-    public Point getP() {
+    public static Point getP() {
         return p;
     }
 
-    public void setP(Point p) {
-        this.p = p;
+    public static void setP(Point p) {
+        Grid.p = p;
     }
 
-    public char getState() {
+    public static char getState() {
         return state;
     }
 
-    public void setState(char state) {
-        this.state = state;
+    public static void setState(char state) {
+        Grid.state = state;
     }
     
     
