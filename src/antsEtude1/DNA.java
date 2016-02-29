@@ -33,8 +33,10 @@ public class DNA {
         this.w_state = w_state;
     }
     
-    public Grid moveAnt(Grid current, char prevDirection) {
-        
+    public Grid moveAnt(Ant ant) {
+        char previousDirection = ant.getPreviousDirection();
+        Grid currentGrid = ant.getCurrentGrid();
+        return currentGrid;
     }
     
 }
