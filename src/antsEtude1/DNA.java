@@ -5,37 +5,46 @@
  */
 package antsEtude1;
 
+import java.awt.Point;
+
 /**
  *
  * @author Prabhat
  */
 public class DNA {
     private char state;
-    private int n_dir;
-    private int e_dir;
-    private int s_dir;
-    private int w_dir;
-    private char n_state;
-    private char e_state;
-    private char s_state;
-    private char w_state;
+    private char north_dir;
+    private char east_dir;
+    private char south_dir;
+    private char west_dir;
+    private char north_state;
+    private char east_state;
+    private char south_state;
+    private char west_state;
     
-    public DNA(char state, int n_dir, int e_dir, int s_dir, int w_dir,
-            char n_state, char e_state, char s_state, char w_state) {
+    public DNA(char state, char north_dir, char east_dir, char south_dir, char west_dir,
+            char north_state, char east_state, char south_state, char west_state) {
         this.state = state;
-        this.n_dir = n_dir;
-        this.e_dir = e_dir;
-        this.s_dir = s_dir;
-        this.w_dir = w_dir;
-        this.n_state = n_state;
-        this.e_state = e_state;
-        this.s_state = s_state;
-        this.w_state = w_state;
+        this.north_dir = north_dir;
+        this.east_dir = east_dir;
+        this.south_dir = south_dir;
+        this.west_dir = west_dir;
+        this.north_state = north_state;
+        this.east_state = east_state;
+        this.south_state = south_state;
+        this.west_state = west_state;
     }
     
     public Grid moveAnt(Ant ant) {
         char previousDirection = ant.getPreviousDirection();
         Grid currentGrid = ant.getCurrentGrid();
+        Point p = new Point(currentGrid.getP());
+        int x = 0;
+        int y = 0;
+        switch (previousDirection) {
+            case 'n' :
+                p.translate(x, y);
+        }
         return currentGrid;
     }
     
