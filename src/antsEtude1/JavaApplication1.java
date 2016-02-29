@@ -5,6 +5,7 @@
  */
 package antsEtude1;
 
+import java.awt.Point;
 import java.util.Scanner;
 
 /**
@@ -13,6 +14,8 @@ import java.util.Scanner;
  */
 public class JavaApplication1 {
 
+    private final Point N = new Point (0,1);
+     
     /**
      * @param args the command line arguments
      */
@@ -32,7 +35,25 @@ public class JavaApplication1 {
         System.out.println("in if statement");
             s = in.nextLine();
         //System.out.println(s);
+        }else {
+            //setup the DNA for the ant
+            char DNA_State = s.charAt(0);
+            
+            
+            
+            
+            
+            
+            
+            char DNAToState1 = s.charAt(7);
+            char DNAToState2 = s.charAt(8);
+            char DNAToState3 = s.charAt(9);
+            char DNAToState4 = s.charAt(10);
+            
         }
+        
+        
+        
         //echo the input
         System.out.println(s);
         
