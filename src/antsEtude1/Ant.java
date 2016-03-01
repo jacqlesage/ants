@@ -10,29 +10,28 @@ package antsEtude1;
  * @author admin
  */
 public class Ant {
-    private Grid position;
+    private Grid currentGrid;
     private char previousDirection;
 
     public Ant(Grid position, char previousDirection) {
-        this.position = position;
+        this.currentGrid = position;
         this.previousDirection = previousDirection;
     }
 
-    public Grid getPosition() {
-        return position;
+    public Grid getCurrentGrid() {
+        return currentGrid;
     }
 
     public char getPreviousDirection() {
         return previousDirection;
     }
 
-    public void setPosition(Grid position) {
-        this.position = position;
+    public void setCurrentGrid(Grid position) {
+        this.currentGrid = position;
     }
 
     public void setPreviousDirection(char previousDirection) {
         this.previousDirection = previousDirection;
     }
-    
-    
+        
 }
