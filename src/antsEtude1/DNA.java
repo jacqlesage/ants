@@ -6,6 +6,7 @@
 package antsEtude1;
 
 import java.awt.Point;
+import java.util.*;
 
 /**
  *
@@ -22,8 +23,15 @@ public class DNA {
     private char south_state;
     private char west_state;
     
-    public DNA(char state, char north_dir, char east_dir, char south_dir, char west_dir,
-            char north_state, char east_state, char south_state, char west_state) {
+    public DNA(char state, 
+            char north_dir, 
+            char east_dir, 
+            char south_dir, 
+            char west_dir,
+            char north_state, 
+            char east_state, 
+            char south_state, 
+            char west_state) {
         this.state = state;
         this.north_dir = north_dir;
         this.east_dir = east_dir;
@@ -35,17 +43,47 @@ public class DNA {
         this.west_state = west_state;
     }
     
-    public Grid moveAnt(Ant ant) {
+    public void moveAnt(Ant ant, char state, HashMap grid) {
         char previousDirection = ant.getPreviousDirection();
-        Grid currentGrid = ant.getCurrentGrid();
-        Point p = new Point(currentGrid.getP());
-        int x = 0;
-        int y = 0;
+        Point originalPoint = new Point(ant.getLocation());
+        Point translatePoint = new Point(originalPoint);
         switch (previousDirection) {
-            case 'n' :
-                p.translate(x, y);
+            case 'N' :
+                translatePoint(translatePoint, north_dir);
+                grid.put(new Point(translatePoint), north_state);
+                break;
+            case 'E' :
+                translatePoint(translatePoint, east_dir);
+                grid.put(new Point(translatePoint), east_state);
+                break;
+            case 'S' :
+                translatePoint(translatePoint, south_dir);
+                grid.put(new Point(translatePoint), south_state);
+                break;
+            case 'W' :
+                translatePoint(translatePoint, west_dir);
+                grid.put(new Point(translatePoint), west_state);
+                break;
         }
-        return currentGrid;
+        
+        if(!originalPoint.equals(translatePoint)) grid.put(originalPoint, state);
+    }
+    
+    private void translatePoint(Point p, char direction) {
+        switch (direction) {
+            case 'N':
+                p.translate(0, 1);
+                break;
+            case 'E':
+                p.translate(1, 0);
+                break;
+            case 'S':
+                p.translate(0, -1);
+                break;
+            case 'W':
+                p.translate(-1, 0);
+                break;
+        }
     }
     
 }

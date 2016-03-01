@@ -5,29 +5,32 @@
  */
 package antsEtude1;
 
+import java.awt.Point;
+
 /**
  *
  * @author admin
  */
 public class Ant {
-    private Grid currentGrid;
     private char previousDirection;
+    private Point location;
+    private char state;
 
-    public Ant(Grid position, char previousDirection) {
-        this.currentGrid = position;
+    public Ant(char previousDirection, Point location) {
         this.previousDirection = previousDirection;
+        this.location = location;
     }
-
-    public Grid getCurrentGrid() {
-        return currentGrid;
+    
+    public Point getLocation() {
+        return location;
     }
 
     public char getPreviousDirection() {
         return previousDirection;
     }
 
-    public void setCurrentGrid(Grid position) {
-        this.currentGrid = position;
+    public void setLocation(Point location) {
+        this.location = location;
     }
 
     public void setPreviousDirection(char previousDirection) {
