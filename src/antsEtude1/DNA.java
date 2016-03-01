@@ -50,23 +50,22 @@ public class DNA {
         switch (previousDirection) {
             case 'N' :
                 translatePoint(translatePoint, north_dir);
-                grid.put(new Point(translatePoint), north_state);
+                grid.put(new Point(originalPoint), north_state);
                 break;
             case 'E' :
                 translatePoint(translatePoint, east_dir);
-                grid.put(new Point(translatePoint), east_state);
+                grid.put(new Point(originalPoint), east_state);
                 break;
             case 'S' :
                 translatePoint(translatePoint, south_dir);
-                grid.put(new Point(translatePoint), south_state);
+                grid.put(new Point(originalPoint), south_state);
                 break;
             case 'W' :
                 translatePoint(translatePoint, west_dir);
-                grid.put(new Point(translatePoint), west_state);
+                grid.put(new Point(originalPoint), west_state);
                 break;
-        }
-        
-        if(!originalPoint.equals(translatePoint)) grid.put(originalPoint, state);
+        }        
+        ant.setLocation(translatePoint);
     }
     
     private void translatePoint(Point p, char direction) {
