@@ -14,7 +14,6 @@ import java.awt.Point;
 public class Ant {
     private char previousDirection;
     private Point location;
-    private char state;
 
     public Ant(char previousDirection, Point location) {
         this.previousDirection = previousDirection;
