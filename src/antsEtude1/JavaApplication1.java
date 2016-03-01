@@ -39,12 +39,11 @@ public class JavaApplication1 {
             //setup the DNA for the ant
             char DNA_State = s.charAt(0);
             
-            
-            
-            
-            
-            
-            
+            char compass1 = s.charAt(2);
+            char compass2 = s.charAt(3);
+            char compass3 = s.charAt(4);
+            char compass4 = s.charAt(5);     
+          
             char DNAToState1 = s.charAt(7);
             char DNAToState2 = s.charAt(8);
             char DNAToState3 = s.charAt(9);
