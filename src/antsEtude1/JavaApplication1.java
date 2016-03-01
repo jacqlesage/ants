@@ -23,7 +23,7 @@ public class JavaApplication1 {
      */
     public static void main(String[] args) {
         String s;
-        ArrayList<DNA> obj = new ArrayList<DNA>();
+        ArrayList<DNA> DNAlist = new ArrayList<DNA>();
         try {
             FileInputStream is = new FileInputStream(new File("C:\\Users\\James\\Documents\\NetBeansProjects\\AntsEtude1\\src\\antsEtude1\\input.txt"));
             System.setIn(is);
@@ -36,9 +36,6 @@ public class JavaApplication1 {
         //test line
         //System.out.println("Enter a string");
         //get the line coming in
-        
-      
-        
         while (in.hasNextLine()) {
             s = in.nextLine();
             //check if this line is a # - this should be comments so ignore
@@ -46,7 +43,7 @@ public class JavaApplication1 {
                 System.out.println("in if statement, comment found");
                 //s = in.nextLine();
                 //System.out.println(s);
-            // check if character is digit
+                // check if character is digit
             } else if (Character.isDigit(s.charAt(0))) {
                 Integer stepsToTake = Integer.parseInt(s);
                 System.out.println("in int statement");
@@ -69,14 +66,18 @@ public class JavaApplication1 {
                 char DNAToStateW = s.charAt(10);
 
                 System.out.println("DNAToState = " + DNAToStateN + " " + DNAToStateE + " " + DNAToStateS + " " + DNAToStateW);
-                
-                DNA e = new DNA(DNA_State,compassN, compassE,compassS,compassW,DNAToStateN,DNAToStateE,DNAToStateS,DNAToStateW);
-                
-                obj.add(e);
+
+                DNA e = new DNA(DNA_State, compassN, compassE, compassS, compassW, DNAToStateN, DNAToStateE, DNAToStateS, DNAToStateW);
+
+                DNAlist.add(e);
+
             }
 
-            //echo the input
-           
+        }
+
+        for (DNA e : DNAlist) {
+            
+            System.out.println(e.toString());
 
         }
     }
