@@ -22,10 +22,14 @@ public class JavaApplication1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        String s;
         ArrayList<DNA> DNAlist = new ArrayList<DNA>();
+        readInput(DNAlist);
+    }
+
+    private static void readInput(ArrayList<DNA> DNAlist) {
+        String s;
         try {
-            FileInputStream is = new FileInputStream(new File("C:\\Users\\James\\Documents\\NetBeansProjects\\AntsEtude1\\src\\antsEtude1\\input.txt"));
+            FileInputStream is = new FileInputStream(new File("C:\\Users\\admin\\Documents\\Otago uni\\COSC326\\ants\\ants\\src\\antsEtude1\\input.txt"));
             System.setIn(is);
 
         } catch (FileNotFoundException e) {
@@ -72,13 +76,9 @@ public class JavaApplication1 {
                 DNAlist.add(e);
 
             }
-
         }
-
         for (DNA e : DNAlist) {
-            
-            System.out.println(e.toString());
-
+        System.out.println(e.toString());
         }
     }
 }
