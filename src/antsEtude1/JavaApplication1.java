@@ -14,13 +14,13 @@ import java.util.Scanner;
  */
 public class JavaApplication1 {
 
-    private final Point N = new Point (0,1);
-     
+        
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         String s;
+        String temp;
         
         Scanner in = new Scanner (System.in);
         
@@ -30,6 +30,7 @@ public class JavaApplication1 {
         //get the line coming in
         s = in.nextLine();
         
+        while(in.hasNext()){
         //check if this line is a # - this should be comments so ignore
         if(s.charAt(0)== '#'){
         System.out.println("in if statement");
@@ -49,8 +50,17 @@ public class JavaApplication1 {
             char DNAToState3 = s.charAt(9);
             char DNAToState4 = s.charAt(10);
             
+            
+            
+            temp = in.nextLine();
+            //check if the next line is an int
+            if(Character.isDigit(temp.charAt(0))){
+            
+            Integer stepsToTake = Integer.parseInt(temp) ;
+            System.out.println("in int statement");
+            System.out.println("stepsToTake");
+            }
         }
-        
         
         
         //echo the input
