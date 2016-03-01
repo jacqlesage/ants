@@ -43,26 +43,38 @@ public class DNA {
         this.west_state = west_state;
     }
     
-    public void moveAnt(Ant ant, char state, HashMap grid) {
+    public void moveAnt(Ant ant, HashMap grid) {
         char previousDirection = ant.getPreviousDirection();
+//        System.out.println("previousDirection = " + previousDirection);
         Point originalPoint = new Point(ant.getLocation());
         Point translatePoint = new Point(originalPoint);
         switch (previousDirection) {
             case 'N' :
                 translatePoint(translatePoint, north_dir);
+//                System.out.println("translated point = " + translatePoint + ", new direction = " + north_dir);
                 grid.put(new Point(originalPoint), north_state);
+//                System.out.println("original point = " + originalPoint + ", new state = " + north_state);
+                ant.setPreviousDirection(north_dir);
                 break;
             case 'E' :
                 translatePoint(translatePoint, east_dir);
+//                System.out.println("translated point = " + translatePoint + ", new direction = " + east_dir);
                 grid.put(new Point(originalPoint), east_state);
+//                System.out.println("original point = " + originalPoint + ", new state = " + east_state);
+                ant.setPreviousDirection(east_dir);
                 break;
             case 'S' :
                 translatePoint(translatePoint, south_dir);
+//                System.out.println("translated point = " + translatePoint + ", new direction = " + south_dir);
                 grid.put(new Point(originalPoint), south_state);
+//                System.out.println("original point = " + originalPoint + ", new state = " + west_state);
+                ant.setPreviousDirection(south_dir);
                 break;
             case 'W' :
                 translatePoint(translatePoint, west_dir);
+//                System.out.println("translated point = " + translatePoint + ", new direction = " + west_dir);
                 grid.put(new Point(originalPoint), west_state);
+                ant.setPreviousDirection(west_dir);
                 break;
         }        
         ant.setLocation(translatePoint);
