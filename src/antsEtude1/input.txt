@@ -1,7 +1,7 @@
-. EEEE xxxx
-y SEWN x.!y
-# Comment
-x WEEE !!!!
-# Commment
-! NWES .yx!
+w ESWN bbbb
+b WNES wwww
+#. EEEE xxxx
+#y SEWN x.!y
+#x WEEE !!!!
+#! NWES .yx!
 10
