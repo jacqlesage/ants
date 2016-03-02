@@ -9,7 +9,9 @@ import java.awt.Point;
 
 /**
  *
- * @author admin
+ * @author James
+ * @author Prabhat
+ * @author Ali
  */
 public class Ant {
     private char previousDirection;
@@ -35,5 +37,9 @@ public class Ant {
     public void setPreviousDirection(char previousDirection) {
         this.previousDirection = previousDirection;
     }
-        
+
+    @Override
+    public String toString() {
+        return "Ant{" + "previousDirection=" + previousDirection + ", location=" + location + '}';
+    }
 }
