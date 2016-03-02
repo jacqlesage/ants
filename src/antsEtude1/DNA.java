@@ -10,7 +10,9 @@ import java.util.*;
 
 /**
  *
+ * @author James
  * @author Prabhat
+ * @author Ali
  */
 public class DNA {
     private char state;
