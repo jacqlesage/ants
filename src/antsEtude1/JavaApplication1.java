@@ -16,6 +16,14 @@ import java.util.Scanner;
 /**
  *
  * @author James
+ * @author Prabhat
+ * @author Ali
+ * 
+ * Main method for project:
+ * - Reads input from System.in: stores DNA in DNA objects list, stores number
+ * of steps
+ * - Simulates the ants journey
+ * - Outputs to System.out: Echoed DNA lines, ant's final location
  */
 public class JavaApplication1 {
     /**
@@ -29,7 +37,7 @@ public class JavaApplication1 {
     /**
      * A method which reads in input and makes changes on it as per customers requirements
      * 
-     * @param DNAlist - An Arraylist which holds the lines from the input
+     * @param DNAlist - An Arraylist which holds the DNA objects
      * @return numSteps - the amount of lines to process
      */
     private static Integer readInput(ArrayList<DNA> DNAlist) {
@@ -55,7 +63,7 @@ public class JavaApplication1 {
 
             } else {
              //we have to capture the input from the line and break it down for our DNA constructor   
-                System.out.println(s + "\n");
+                System.out.println(s);
 //                setup the DNA for the ant
                 char DNA_State = s.charAt(0);
 
@@ -71,7 +79,8 @@ public class JavaApplication1 {
 
                 //place the info into our constructor for the DNA object
                 DNA e = new DNA(DNA_State, compassN, compassE, compassS, compassW, DNAToStateN, DNAToStateE, DNAToStateS, DNAToStateW);
-
+                   
+                //adds DNA object to ArrayList
                 DNAlist.add(e);
 
             }
@@ -102,7 +111,7 @@ public class JavaApplication1 {
         grid.put(new Point(0,0), initialState);
         Ant ant = new Ant('N', new Point(0,0));
 
-        for (int i = 1; i < numSteps; i++) {
+        for (int i = 0; i < numSteps; i++) {
 
             currentPoint = ant.getLocation();
 
