@@ -39,7 +39,7 @@ public class Scenario {
         return dnaList;
     }
     
-    public int getNumSteps() {
+    public Integer getNumSteps() {
         return numSteps;
     }
     
