@@ -1,5 +1,7 @@
-#w ESWN bbbb
-#b WNES wwww
+w ESWN bbbb
+b WNES wwww
+5
+
 . EEEE xxxx
 y SEWN x.!y
 x WEEE !!!!
