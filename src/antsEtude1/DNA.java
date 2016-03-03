@@ -105,7 +105,8 @@ public class DNA {
     
     @Override
     public String toString() {
-        return "DNA{" + "state=" + state + ", north_dir=" + north_dir + ", east_dir=" + east_dir + ", south_dir=" + south_dir + ", west_dir=" + west_dir + ", north_state=" + north_state + ", east_state=" + east_state + ", south_state=" + south_state + ", west_state=" + west_state + '}';
+        return state + " " + north_dir + east_dir + south_dir + west_dir +
+                " " + north_state + east_state + south_state + west_state;
     }
     
 }
